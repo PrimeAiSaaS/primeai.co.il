@@ -2477,12 +2477,6 @@ function qfOptClick(el) {
   el.classList.add('sel'); el.setAttribute('aria-checked','true')
   QFS.answers[step.id] = v
 
-  // ── Hard disqualification: clinic pathway, readiness = no ──
-  if (QFS.pathway === 'clinic' && step.id === 'readiness' && v === 'no') {
-    setTimeout(qfDisqualify, 320)
-    return
-  }
-
   // Conditional URL field
   const uw = document.getElementById('qf-url-wrap')
   const nx = document.getElementById('qf-nx')
@@ -2500,77 +2494,6 @@ function qfOptClick(el) {
   } else {
     setTimeout(qfNext, 320)     // auto-advance
   }
-}
-
-/* ── Disqualification: clinic not ready ──
-   Fires a separate webhook payload with status=disqualified,
-   then shows a FOMO rejection screen (no phone collection needed —
-   phone may not yet be collected at readiness step, so we
-   show the screen and let them optionally re-engage).
-─────────────────────────────────────────────────────── */
-async function qfDisqualify() {
-  const s  = document.getElementById('qf-stage')
-  const pw = document.getElementById('qf-pw')
-  QFS.dir  = 1
-  if (pw) pw.hidden = true
-
-  // Animate out
-  s.classList.add('qf-out')
-
-  // Fire disqualified webhook payload (best-effort, silent on failure)
-  const payload = {
-    businessType:   'clinic',
-    pathway_label:  'מרפאת שיניים פרטית',
-    status:         'disqualified',
-    disqualReason:  'not_ready',
-    timestamp:      new Date().toISOString(),
-    source:         'primeai_website',
-    answers:        { ...QFS.answers },
-    // WhatsApp message to send to lead (handled by Make.com scenario):
-    whatsappMessage: 'מכיוון שצוות המרפאה אינו ערוך כרגע להטמעת טכנולוגיות חדשות, מערכת ה-AI זיהתה שאיננו יכולים להבטיח את רמת הרווחיות המקסימלית עבורכם במחזור הנוכחי, ולכן הגשת המועמדות נדחתה. אם חל שינוי ואתם מוכנים להתקדם, ניתן לפנות אלינו ידנית לבחינת חריגים.'
-  }
-  try {
-    await fetch(QF_WEBHOOK, {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(payload)
-    })
-  } catch(e) { /* silent */ }
-
-  // Render rejection screen
-  setTimeout(() => {
-    s.classList.remove('qf-out')
-    s.innerHTML = `
-      <div class="qf-ok" role="status" aria-live="polite">
-        <div class="qf-ok-icon" aria-hidden="true">🔒</div>
-        <div class="qf-ok-title" style="color:#FF6B6B">הגשת המועמדות נדחתה</div>
-        <p class="qf-ok-sub" style="max-width:440px">
-          מערכת ה-AI זיהתה שצוות המרפאה אינו ערוך כרגע להטמעת טכנולוגיות חדשות.
-          בנסיבות אלו <strong style="color:rgba(255,255,255,.85)">איננו יכולים להבטיח את רמת הרווחיות המקסימלית</strong> עבורכם במחזור הנוכחי,
-          ולכן אנחנו לא ממשיכים בתהליך.
-        </p>
-
-        <div style="background:rgba(255,107,107,.06);border:1px solid rgba(255,107,107,.2);
-          border-radius:16px;padding:18px 22px;margin-bottom:22px;
-          font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;
-          max-width:420px;text-align:right">
-          <strong style="color:#FF8080;display:block;margin-bottom:6px">📩 נשלחה הודעה לוואטסאפ שלכם:</strong>
-          מכיוון שצוות המרפאה אינו ערוך כרגע להטמעת טכנולוגיות חדשות,
-          מערכת ה-AI זיהתה שאיננו יכולים להבטיח את רמת הרווחיות המקסימלית עבורכם במחזור הנוכחי,
-          ולכן הגשת המועמדות נדחתה.
-          <span style="color:rgba(255,255,255,.45);display:block;margin-top:8px;font-size:13px">
-            אם חל שינוי ואתם מוכנים להתקדם — ניתן לפנות אלינו ידנית לבחינת חריגים.
-          </span>
-        </div>
-
-        <button class="qf-btn-rst" onclick="qfRestart()" style="border-color:rgba(255,107,107,.3);color:#FF8080">
-          חזרה לתחילת השאלון
-        </button>
-      </div>`
-    s.classList.add('qf-in')
-    s.getBoundingClientRect()
-    s.classList.remove('qf-in')
-  }, 225)
 }
 
 /* ── Multi-select click ── */
