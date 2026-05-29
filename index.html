@@ -2674,6 +2674,13 @@ function qfRestart() {
     /* Render without animation — page just loaded */
     const s = document.getElementById('qf-stage')
     if (s) s.innerHTML = qfRenderStep()
+
+    /* Smooth-scroll to the questionnaire section after a short delay
+       so the browser finishes painting first */
+    setTimeout(() => {
+      document.getElementById('contact')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 320)
   } else {
     /* Default: show the 3-button selector */
     qfInit()
