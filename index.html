@@ -472,6 +472,7 @@ section:not(#hero){padding:100px 24px}
 .service-card ul{list-style:none}
 .service-card li{color:rgba(255,255,255,.65);font-size:15px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:10px}
 .service-card li::before{content:'●';font-size:8px;color:var(--c);flex-shrink:0}
+.card-line{font-size:15px;color:rgba(255,255,255,.62);line-height:1.8;margin-bottom:4px}
 /* ── WAVE 2: questionnaire success → WhatsApp handoff ── */
 .qf-wa-box{margin:18px 0 0;text-align:right;direction:rtl;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.62);white-space:pre-wrap;max-height:200px;overflow-y:auto;font-family:'Heebo',sans-serif}
 .qf-wa-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
@@ -1280,9 +1281,9 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
     <span class="logo-text">PrimeAI</span>
   </div>
   <div class="nav-links" role="list">
-    <a href="#verticals" role="listitem">שירותים</a>
+    <a href="#what-we-build" role="listitem">מה אנחנו בונים</a>
     <a href="#otower" role="listitem">O-Tower</a>
-    <a href="#portfolio" role="listitem">עבודות</a>
+    <a href="#automation" role="listitem">אוטומציה</a>
     <a href="#faq" role="listitem">שאלות</a>
     <a href="#contact" role="listitem">צור קשר</a>
     <a href="#contact" class="nav-cta" role="listitem">התחל פרויקט</a>
@@ -1311,12 +1312,13 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
 </section>
 
 <a id="services" tabindex="-1" aria-hidden="true"></a>
-<section id="verticals" aria-labelledby="verticals-title">
+<a id="verticals" tabindex="-1" aria-hidden="true"></a>
+<section id="what-we-build" aria-labelledby="wwb-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">איפה אנחנו עובדים</span>
-      <h2 class="section-title" id="verticals-title">אנכיות</h2>
-      <p class="section-sub">אנחנו לא בונים כלים גנריים. אנחנו בונים מערכת אחת לתעשייה אחת — עמוק, עד הסוף.</p>
+      <span class="section-tag">שלושה תחומים</span>
+      <h2 class="section-title" id="wwb-title">מה אנחנו בונים</h2>
+      <p class="section-sub">מערכות שמחברות בין הדיגיטלי לפיזי — נכס פיזי שמנוהל דיגיטלית, ותשומת לב דיגיטלית שהופכת ללקוח בדלת.</p>
     </div>
     <div class="services-grid">
 
@@ -1324,11 +1326,7 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
         <div class="service-icon">🏗️</div>
         <span class="vert-badge"><span class="dot" aria-hidden="true"></span>חי בייצור</span>
         <h3>התחדשות עירונית</h3>
-        <ul>
-          <li>ניהול פרויקט פינוי-בינוי מקצה לקצה</li>
-          <li>דיירים, חוזים, שלבים ומסמכים במקום אחד</li>
-          <li>מבוסס על O-Tower — מערכת חיה בייצור</li>
-        </ul>
+        <p class="card-line">ניהול מתחם פינוי-בינוי מקצה לקצה — דיירים, חוזים, שלבים ומסמכים במערכת אחת.</p>
         <a href="#otower" class="vert-link">להכיר את O-Tower ←</a>
       </div>
 
@@ -1336,44 +1334,39 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
         <div class="service-icon">⚡</div>
         <span class="vert-badge"><span class="dot" aria-hidden="true"></span>לכל עסק</span>
         <h3>אוטומציה עסקית</h3>
-        <ul>
-          <li>חיבור בין המערכות שכבר יש לעסק</li>
-          <li>סוכני AI למכירות ולשירות</li>
-          <li>תהליכים אוטומטיים מליד ועד חשבונית</li>
-        </ul>
-        <a href="/?type=company#contact" class="vert-link">לאבחון התהליכים ←</a>
+        <p class="card-line">חיבור בין המערכות שכבר יש לעסק, סוכני AI למכירות ולשירות, ותהליכים אוטומטיים מליד ועד חשבונית.</p>
+        <a href="#automation" class="vert-link">מה זה כולל ←</a>
       </div>
 
       <div class="service-card soon reveal" style="--c:#06FFA5;--bc:rgba(6,255,165,.3);--sh:rgba(6,255,165,.1);--ibg:rgba(6,255,165,.08);--ib:rgba(6,255,165,.2)">
         <div class="service-icon">👗</div>
         <span class="vert-badge"><span class="dot" aria-hidden="true"></span>בקרוב</span>
         <h3>אופנה וקמעונאות</h3>
-        <ul>
-          <li>טרם נבנתה מערכת</li>
-          <li>אנכייה שנפתחת — פרטים כשיהיה מה לספר</li>
-        </ul>
+        <p class="card-line">טרם נבנתה מערכת. תחום שנפתח — פרטים כשיהיה מה לספר.</p>
       </div>
 
     </div>
-    <p class="cross-layer reveal"><strong>אינטגרציות הן שכבה שחוצה את כל האנכיות.</strong> כל מערכת שאנחנו בונים מגיעה מחוברת למה שכבר קיים אצלכם — CRM, יומנים, חשבוניות ו-WhatsApp. החיבור אינו תוספת, הוא חלק מהמערכת.</p>
+    <p class="cross-layer reveal"><strong>אינטגרציות הן שכבה שחוצה את כל התחומים.</strong> כל מערכת שאנחנו בונים מגיעה מחוברת למה שכבר קיים אצלכם — CRM, יומנים, חשבוניות ו-WhatsApp. החיבור אינו תוספת, הוא חלק מהמערכת.</p>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════════
      O-TOWER — FLAGSHIP PRODUCT SECTION (Wave 1)
 ══════════════════════════════════════════════════ -->
+<a id="portfolio" tabindex="-1" aria-hidden="true"></a>
 <section id="otower" aria-labelledby="otower-title">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-tag">המוצר המרכזי</span>
       <h2 class="section-title" id="otower-title">O-Tower — מערכת ניהול פינוי-בינוי</h2>
-      <p class="ot-lead">מערכת חיה שמנהלת מתחם פינוי-בינוי פעיל בצפון: כל בעל דירה, כל חוזה וכל שלב בתהליך — במקום אחד, בזמן אמת.</p>
+      <p class="ot-lead">ניהול מתחם פינוי-בינוי מול עשרות בעלי דירות מתפזר בין אקסלים לקבוצות וואטסאפ, ואיש לא יכול לומר בוודאות מה הסטטוס של דירה מסוימת. <strong>O-Tower</strong> מרכזת את הכל למערכת אחת — מערכת חיה שמנהלת מתחם פעיל בצפון.</p>
     </div>
 
     <div class="ot-metrics reveal">
       <div class="ot-metric"><b>176</b><span>יחידות דיור</span></div>
       <div class="ot-metric"><b>9</b><span>בניינים</span></div>
       <div class="ot-metric"><b>171</b><span>בעלים</span></div>
+      <div class="ot-metric"><b>3</b><span>שפות ממשק</span></div>
     </div>
 
     <h3 class="ot-sub-h reveal">מה המערכת עושה</h3>
@@ -1443,24 +1436,6 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
       <a href="/?type=urban#contact" class="btn-primary">לדבר על המתחם שלכם</a>
       <a href="https://o-tower.co.il" class="btn-outline" target="_blank" rel="noopener">לאתר המערכת ↗</a>
     </div>
-  </div>
-</section>
-
-<section id="portfolio" aria-labelledby="portfolio-title">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag" style="color:#A855F7">CASE STUDIES</span>
-      <h2 class="section-title" id="portfolio-title">תיק עבודות</h2>
-      <p class="section-sub">מערכות שמחברות בין הדיגיטלי לפיזי — נכס פיזי שמנוהל דיגיטלית, ותשומת לב דיגיטלית שהופכת ללקוח בדלת.</p>
-    </div>
-    <div class="case-box show" id="case0" style="border-color:rgba(0,212,255,.2)">
-      <div class="case-header"><div class="case-badge" style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:#00D4FF">OT</div><div><div class="case-tag-text" style="color:#00D4FF">Urban Renewal</div><div style="font-size:28px;font-weight:900">O-Tower — ניהול פינוי-בינוי</div><div style="font-size:13.5px;color:rgba(255,255,255,.45);margin-top:6px">מתחם פעיל בצפון · 176 יחידות דיור · 9 בניינים · 171 בעלים · 3 שפות ממשק</div></div></div>
-      <div class="case-body">
-        <div class="case-col"><div class="col-label">האתגר</div><p>ניהול מתחם פינוי-בינוי מול עשרות בעלי דירות — מעקב החתמות ואחוזי רוב, מסמכים רב-תפקידיים, ותקשורת מפוזרת בין אקסלים לקבוצות וואטסאפ.</p></div>
-        <div class="case-col"><div class="col-label">הפתרון</div><ul><li><span class="check" style="color:#00D4FF">✓</span>מערכת ייעודית עם פורטל דיירים</li><li><span class="check" style="color:#00D4FF">✓</span>שרשרת אישורי חוזה ומעקב שלבים</li><li><span class="check" style="color:#00D4FF">✓</span>הפרדת הרשאות ברמת מסד הנתונים</li></ul></div>
-        <div class="case-col"><div class="col-label">מה נבנה</div><div class="result-chip" style="background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2)">⚙️ פורטל אישי לכל בעל דירה</div><div class="result-chip" style="background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2)">⚙️ ניהול חוזים רב-תפקידי</div><div class="result-chip" style="background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2)">⚙️ מסמכים לפי קהל</div><div class="result-chip" style="background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2)">⚙️ תקשורת מתועדת</div><div class="result-chip" style="background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2)">⚙️ ממשק בשלוש שפות</div></div>
-      </div>
-    </div>
 
     <!-- ── Teaser card ── -->
     <div style="margin-top:20px;background:linear-gradient(135deg,rgba(168,85,247,.06),rgba(0,212,255,.04));border:1.5px dashed rgba(255,255,255,.12);border-radius:24px;padding:36px;text-align:center;position:relative;overflow:hidden">
@@ -1483,73 +1458,42 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
      SERVICES DEEP SEMANTIC — Core Offers (GEO/SEO)
      Hidden visually minimal, rich for crawlers
 ══════════════════════════════════════════════════ -->
-<section class="svc-deep" id="services-deep" aria-labelledby="svc-deep-title">
+<a id="services-deep" tabindex="-1" aria-hidden="true"></a>
+<section class="svc-deep" id="automation" aria-labelledby="auto-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-tag">מה בדיוק אנחנו בונים</span>
-      <h2 class="section-title" id="svc-deep-title">היכולות המלאות שלנו</h2>
-      <p class="section-sub">כל מערכת נבנית לתעשייה שהיא משרתת — לא תבניות גנריות.</p>
+      <span class="section-tag">לכל עסק</span>
+      <h2 class="section-title" id="auto-title">אוטומציה עסקית</h2>
+      <p class="section-sub">מחברים את הכלים שכבר יש לכם, ומניחים סוכן AI בנקודה שבה נכנסות הפניות.</p>
     </div>
 
-    <!-- Urban Renewal -->
-    <article class="svc-block reveal" style="--bc:#00D4FF;--bg:rgba(0,212,255,.06)" itemscope itemtype="https://schema.org/Service">
-      <div class="svc-block-tag">התחדשות עירונית</div>
-      <h3 itemprop="name">מערכת לניהול פרויקטי פינוי-בינוי — O-Tower</h3>
-      <p itemprop="description">
-        ניהול מתחם התחדשות מחזיק במקביל עשרות בעלי דירות, שרשרת אישורים בין ארבעה תפקידים, ואוסף מסמכים שבו לכל צד מותר לראות דבר אחר. <strong>O-Tower</strong> מרכזת את זה למערכת אחת: פורטל אישי לכל בעל דירה, ניהול חוזים עם מעברי סטטוס מתועדים, מעקב שלבים ואחוזי חתימה בזמן אמת, ומסמכים לפי תפקיד.
-        הפרדת ההרשאות נאכפת ברמת מסד הנתונים ולא ברמת התצוגה, כל פעולה נרשמת ביומן, והממשק עובד בעברית, רוסית וערבית. המערכת בייצור ומנהלת מתחם פעיל בצפון.
-      </p>
-      <div class="svc-block-tags">
-        <span class="svc-tag hi">פינוי בינוי</span>
-        <span class="svc-tag hi">התחדשות עירונית</span>
-        <span class="svc-tag hi">פורטל דיירים</span>
-        <span class="svc-tag">ניהול חוזים</span>
-        <span class="svc-tag">הפרדת הרשאות</span>
-        <span class="svc-tag">רב-לשוני</span>
-      </div>
-    </article>
-
-    <!-- Business Automation -->
+    <!-- Automation engine + AI agent — one offering -->
     <article class="svc-block reveal" style="--bc:#A855F7;--bg:rgba(168,85,247,.06)" itemscope itemtype="https://schema.org/Service">
-      <div class="svc-block-tag">אוטומציה עסקית כללית</div>
-      <h3 itemprop="name">אוטומציות Make.com לעסקים — ממכירות ועד שירות</h3>
+      <div class="svc-block-tag">מנוע האוטומציה</div>
+      <h3 itemprop="name">מליד ועד חשבונית — בלי מגע ידני</h3>
       <p itemprop="description">
-        עסק שמנהל לידים ידנית משלם על זה בזמן. PrimeAI בונה <strong>מנוע אוטומציה ב-Make.com</strong> שמחבר את כל הכלים שכבר יש לך: טופס ליד → CRM → הודעת וואטסאפ אוטומטית → יומן → חשבונית. כולל: ניקוד לידים אוטומטי (Lead Scoring) על בסיס מאפיינים, חלוקה לנציג הנכון, מעקב אחרי שלב בצינור המכירות, ודוח שבועי לניהול.
+        עסק שמנהל לידים ידנית משלם על זה בזמן. אנחנו בונים <strong>מנוע אוטומציה ב-Make.com</strong> שמחבר את הכלים שכבר יש לכם: טופס ליד ← CRM ← וואטסאפ ← יומן ← חשבונית. כולל ניקוד לידים אוטומטי, חלוקה לנציג הנכון, מעקב שלב בצינור המכירות ודוח שבועי לניהול.
+      </p>
+      <p itemprop="description">
+        <strong>בנקודת הכניסה יושב סוכן AI</strong> שמנהל שיחה בעברית טבעית בערוצים הדיגיטליים — וואטסאפ, אתר או טופס. הוא מברר מה הפונה באמת צריך לפני שהוא מגיע לאדם, מסנן לפי קריטריונים שאתם מגדירים, רושם את מה שנאסף ל-CRM, ומעביר לנציג אנושי ברגע שהשיחה דורשת זאת. בנוי על <strong>WhatsApp Business API</strong> עם מנוע שפה מוביל. כל שיחה מתועדת וניתנת לכיול מחדש.
       </p>
       <div class="svc-block-tags">
         <span class="svc-tag hi">Make.com</span>
-        <span class="svc-tag hi">Lead Scoring</span>
+        <span class="svc-tag hi">סוכני AI</span>
         <span class="svc-tag hi">CRM Sync</span>
+        <span class="svc-tag hi">WhatsApp Business API</span>
+        <span class="svc-tag">סינון לידים</span>
+        <span class="svc-tag">Lead Scoring</span>
         <span class="svc-tag">HubSpot</span>
         <span class="svc-tag">Pipedrive</span>
         <span class="svc-tag">Google Sheets</span>
-        <span class="svc-tag">Slack Alerts</span>
-        <span class="svc-tag">OpenAI GPT-4o</span>
-      </div>
-    </article>
-
-    <!-- AI Agents for Business -->
-    <article class="svc-block reveal" style="--bc:#06FFA5;--bg:rgba(6,255,165,.06)" itemscope itemtype="https://schema.org/Service">
-      <div class="svc-block-tag">סוכני AI לעסקים</div>
-      <h3 itemprop="name">סוכן AI למענה, לסינון לידים ולחיבור ל-CRM</h3>
-      <p itemprop="description">
-        סוכן שמענה בערוצים הדיגיטליים של העסק — וואטסאפ, אתר או טופס — מנהל שיחה בעברית טבעית, ומברר מה הפונה באמת צריך לפני שהוא מגיע לאדם. הסוכן מסנן לידים לפי קריטריונים שאתם מגדירים, רושם את מה שנאסף ישירות ל-<strong>CRM הקיים</strong>, ומעביר לנציג אנושי ברגע שהשיחה דורשת זאת.
-        בנוי על <strong>WhatsApp Business API</strong> עם מנוע שפה (GPT-4o או Claude) ו-Make.com כשכבת האינטגרציה. כל שיחה מתועדת וניתנת לסקירה ולכיול מחדש.
-      </p>
-      <div class="svc-block-tags">
-        <span class="svc-tag hi">WhatsApp Business API</span>
-        <span class="svc-tag hi">סינון לידים</span>
-        <span class="svc-tag hi">CRM Sync</span>
-        <span class="svc-tag">GPT-4o</span>
-        <span class="svc-tag">Claude</span>
-        <span class="svc-tag">מענה בערוצים דיגיטליים</span>
       </div>
     </article>
 
     <!-- Digital ↔ Physical -->
     <article class="svc-block reveal" style="--bc:#FF6B6B;--bg:rgba(255,107,107,.06)" itemscope itemtype="https://schema.org/Service">
       <div class="svc-block-tag">דיגיטל ↔ פיזי</div>
-      <h3 itemprop="name">אפליקציות ומערכות שמחברות בין המסך למקום הפיזי</h3>
+      <h3 itemprop="name">אפליקציות שמחברות בין המסך למקום הפיזי</h3>
       <p itemprop="description">
         עסק שמחזיק נוכחות דיגיטלית ומקום פיזי מנהל למעשה שתי מערכות שאינן מדברות. מערכת שמגשרת ביניהן צריכה לפתור שלושה דברים לפני הכל: <strong>זהות משתמש אחת</strong> שנשמרת בין האפליקציה, האתר והעמדה במקום; <strong>מלאי ומצב אמת משותפים</strong>, כך שמה שמוצג במסך ומה שקיים בפועל הם אותו נתון; ו<strong>העברת פעולה לשני הכיוונים</strong> — מהמסך למקום הפיזי ובחזרה.
         בלי שלושת אלה, מה שמתקבל הוא שני ערוצים נפרדים שמתחרים על אותו לקוח.
@@ -1562,6 +1506,10 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
         <span class="svc-tag">מערכות מלאי</span>
       </div>
     </article>
+
+    <div class="ot-cta reveal" style="margin-top:8px">
+      <a href="/?type=company#contact" class="btn-primary">לאבחון התהליכים שלכם</a>
+    </div>
   </div>
 </section>
 
@@ -1826,7 +1774,7 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
   <div class="footer-copy">© PrimeAI 2026. כל הזכויות שמורות.</div>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:10px">
     <div class="footer-links">
-      <a href="#verticals">שירותים</a><a href="#otower">O-Tower</a><a href="#portfolio">עבודות</a>
+      <a href="#what-we-build">מה אנחנו בונים</a><a href="#otower">O-Tower</a><a href="#automation">אוטומציה</a>
       <a href="#faq">שאלות</a><a href="#contact">צור קשר</a>
     </div>
     <div class="footer-legal">
