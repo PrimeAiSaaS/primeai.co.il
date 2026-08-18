@@ -340,7 +340,7 @@
           "name": "האם אתם עובדים עם כל עסק שפונה אליכם?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ממש לא. אנחנו בוחרים את הלקוחות שלנו בקפידה ועובדים עם מספר מוגבל מאוד של עסקים בכל חודש. הסיבה פשוטה: כל מערכת נבנית מאפס לתהליכים של הלקוח ולא מותאמת מתבנית קיימת — אפיון עמוק, פיתוח ייעודי וליווי צמוד. העומק הזה מגביל את מספר הפרויקטים שאפשר לקחת במקביל. מי שעובר את שלב סינון הזכאות מקבל שותף טכנולוגי שבונה לו מערכת — לא מוכר לו מנוי 😉"
+            "text": "ממש לא. אנחנו בוחרים את הלקוחות שלנו בקפידה ועובדים עם מספר מוגבל מאוד של עסקים בכל חודש. הסיבה: O-Tower הוא מוצר קיים שעולה לאוויר במהירות, אבל מערכות אוטומציה בהתאמה אישית נבנות לתהליכים של הלקוח — אפיון עמוק, פיתוח ייעודי וליווי צמוד. העומק הזה מגביל את מספר הפרויקטים שאפשר לקחת במקביל. מי שעובר את שלב סינון הזכאות מקבל שותף טכנולוגי שבונה לו מערכת — לא מוכר לו מנוי 😉"
           }
         }
       ]
@@ -1738,7 +1738,7 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
           <span class="faq-chevron" aria-hidden="true" style="border-color:rgba(168,85,247,.35);background:rgba(168,85,247,.1);color:#A855F7">▾</span>
         </button>
         <div class="faq-body" hidden>
-          <strong>ממש לא.</strong> אנחנו בוחרים את הלקוחות שלנו בקפידה ועובדים עם <strong>מספר מוגבל מאוד של עסקים בכל חודש</strong>. הסיבה פשוטה: כל מערכת נבנית מאפס לתהליכים של הלקוח ולא מותאמת מתבנית קיימת — אפיון עמוק, פיתוח ייעודי וליווי צמוד. העומק הזה מגביל את מספר הפרויקטים שאפשר לקחת במקביל.
+          <strong>ממש לא.</strong> אנחנו בוחרים את הלקוחות שלנו בקפידה ועובדים עם <strong>מספר מוגבל מאוד של עסקים בכל חודש</strong>. הסיבה: O-Tower הוא מוצר קיים שעולה לאוויר במהירות, אבל מערכות אוטומציה בהתאמה אישית נבנות לתהליכים של הלקוח — אפיון עמוק, פיתוח ייעודי וליווי צמוד. העומק הזה מגביל את מספר הפרויקטים שאפשר לקחת במקביל.
           <br/><br/>
           מי שעובר את שלב סינון הזכאות מקבל <strong style="color:rgba(255,255,255,.9)">שותף טכנולוגי שבונה לו מערכת</strong> — לא מוכר לו מנוי 😉
         </div>
@@ -1752,7 +1752,7 @@ html[style*="--qfc: #06FFA5"] .qf-opt.sel{background:rgba(6,255,165,.08)}
     <div class="section-head reveal">
       <span class="section-tag" style="color:#A855F7">אבחון חינמי</span>
       <h2 class="section-title" id="contact-title">בדוק אם אנחנו מתאימים לך</h2>
-      <p class="section-sub">3 דקות · ללא התחייבות · תשובה תוך 24 שעות</p>
+      <p class="section-sub">3 דקות · ללא התחייבות</p>
     </div>
     <div id="qf" class="qf-shell reveal" role="form" aria-label="שאלון אבחון עסקי">
       <!-- Progress bar — hidden until pathway selected -->
@@ -2384,17 +2384,16 @@ const QFD = {
   company: {
     label:'עסק / חברה', icon:'🏢', color:'#00D4FF', sub:'אוטומציה עסקית ומערכות',
     steps:[
-      /* ── 3 FOMO pre-qualification steps (Lemans June 2026 data) ── */
+      /* ── 3 FOMO pre-qualification steps ── */
       { id:'fomo_awareness', type:'single',
-        q:'האם ידעת שמעל 50% מהעסקים בתעשייה המסורתית כבר הטמיעו השנה AI בתהליכים הניהוליים והשיווקיים שלהם?',
-        sub:'נתוני הלמ"ס — יוני 2026',
+        q:'כמה מהמתחרים הישירים שלכם כבר משתמשים ב-AI בתהליכים הניהוליים והשיווקיים?',
         opts:[
-          { v:'yes_fomo', l:'✅ כן, אנחנו כבר חלק מהמגמה' },
-          { v:'no_fomo',  l:'⚡ לא, לא ידעתי שהקצב כזה מהיר' }
+          { v:'yes_fomo', l:'✅ רובם — אנחנו כבר בתוך זה' },
+          { v:'no_fomo',  l:'⚡ לא יודע — וזה בדיוק מה שמטריד אותי' }
         ]
       },
       { id:'pain_point', type:'single',
-        q:'לפי נתוני הלמ"ס, 16% מהמנהלים מעידים שהם פשוט לא יודעים מה ה-AI מסוגל לעשות עבור העסק שלהם. איפה החברה שלך עומדת?',
+        q:'פער נפוץ הוא בין לדעת ש-AI רלוונטי לבין לדעת מה לעשות איתו. איפה החברה שלך עומדת?',
         opts:[
           { v:'no_dev',        l:'יודעים מה צריך — אבל אין לנו מי שיפתח ויטמיע במערכות' },
           { v:'need_strategy', l:'מבינים שיש פוטנציאל — אבל צריכים אבחון וייעוץ אסטרטגי מאפס' },
@@ -2402,8 +2401,8 @@ const QFD = {
         ]
       },
       { id:'vertical', type:'single',
-        q:'עסקים ותיקים בשימוש ב-AI מדווחים על שיפור עקבי וגדול בפריון העובדים. מה היעד המרכזי שלך לחצי השנה הקרובה?',
-        sub:'עסקים עם יעד ברור מגיעים ל-ROI מהיר פי 2.3',
+        q:'מה היעד המרכזי שלך לחצי השנה הקרובה?',
+        sub:'יעד מוגדר הוא מה שמבדיל הטמעה מניסוי',
         opts:[
           { v:'productivity',    l:'ייעול כוח האדם הקיים והעלאת תפוקה' },
           { v:'marketing_auto',  l:'בניית מערכת שיווק ומכירות אוטומטית 24/7' }
@@ -2438,7 +2437,7 @@ const QFD = {
               {v:'5_20k',  l:'5,000 עד 20,000 ₪'},
               {v:'o20k',   l:'מעל 20,000 ₪'}] },
       { id:'phone',     type:'phone',  q:'מספר וואטסאפ לקבלת תוצאות האבחון',
-        sub:'נשלח לך המלצות מותאמות תוך 24 שעות 📲' }
+        sub:'נשלח לך המלצות מותאמות 📲' }
     ]
   },
   urban: {
@@ -2651,6 +2650,10 @@ function qfRenderStep() {
           aria-label="מספר וואטסאפ"
           onkeydown="if(event.key==='Enter')qfSubmit()"/>
       </div>
+      <label for="qf-consent" style="display:flex;align-items:flex-start;gap:9px;margin:16px 0 4px;font-size:13px;line-height:1.55;color:rgba(255,255,255,.72);cursor:pointer;text-align:right">
+        <input type="checkbox" id="qf-consent" style="margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:#00D4FF;cursor:pointer"/>
+        <span>אני מאשר/ת קבלת תוצאות האבחון ועדכונים שיווקיים מ-PrimeAI בוואטסאפ. ניתן להסיר בכל עת · <span onclick="event.stopPropagation();openLegal('privacy')" style="color:#00D4FF;text-decoration:underline">מדיניות הפרטיות</span></span>
+      </label>
       <button class="qf-btn-sub" id="qf-sub" onclick="qfSubmit()"
         aria-label="שלח תוצאות בוואטסאפ">
         <span aria-hidden="true">📲</span>
@@ -2856,6 +2859,8 @@ async function qfLogLead(leadId) {
     timestamp:     new Date().toISOString(),
     source:        'primeai_website',
     delivery:      'whatsapp_primary',
+    consent:       QFS.answers.consent === true,
+    consent_at:    QFS.answers.consent_at || null,
     answers:       Object.assign({}, QFS.answers, qfAttribution())
   }
   try {
@@ -2894,6 +2899,14 @@ function qfSubmit() {
     qfShowErr('נא להזין מספר נייד ישראלי תקין — למשל 050-583-0969')
     return
   }
+  const cbx = document.getElementById('qf-consent')
+  if (!cbx || !cbx.checked) {
+    qfShowErr('כדי שנוכל לשלוח לך את התוצאות, יש לאשר את קבלת הדיוור')
+    return
+  }
+
+  QFS.answers.consent    = true
+  QFS.answers.consent_at = new Date().toISOString()
   QFS.answers[step.id]  = e164
   QFS.answers.phone_raw = raw
 
