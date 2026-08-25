@@ -2368,7 +2368,7 @@ loadA11y()
    החלף את QF_WEBHOOK ב-Webhook של Make.com
    לפני העלאה לאוויר.
 ════════════════════════════════════════ */
-const QF_WEBHOOK = 'https://hook.eu1.make.com/i6comw0g6hcw7wm1ll3jtq7qxqrt5qsr'
+const QF_WEBHOOK = 'https://hook.eu2.make.com/fuc1b8zq1qvyalv32o65msejg8n24gnm'
 
 /* ── Pathway definitions ── */
 const QFD = {
@@ -2642,6 +2642,10 @@ function qfRenderStep() {
           aria-label="מספר וואטסאפ"
           onkeydown="if(event.key==='Enter')qfSubmit()"/>
       </div>
+      <label for="qf-consent" style="display:flex;align-items:flex-start;gap:9px;margin:16px 0 4px;font-size:13px;line-height:1.55;color:rgba(255,255,255,.72);cursor:pointer;text-align:right">
+        <input type="checkbox" id="qf-consent" style="margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:#00D4FF;cursor:pointer"/>
+        <span>אני מאשר/ת קבלת תוצאות האבחון ועדכונים שיווקיים מ-PrimeAI בוואטסאפ. ניתן להסיר בכל עת · <span onclick="event.stopPropagation();openLegal('privacy')" style="color:#00D4FF;text-decoration:underline">מדיניות הפרטיות</span></span>
+      </label>
       <button class="qf-btn-sub" id="qf-sub" onclick="qfSubmit()"
         aria-label="שלח תוצאות בוואטסאפ">
         <span aria-hidden="true">📲</span>
@@ -2847,6 +2851,8 @@ async function qfLogLead(leadId) {
     timestamp:     new Date().toISOString(),
     source:        'primeai_website',
     delivery:      'whatsapp_primary',
+    consent:       QFS.answers.consent === true,
+    consent_at:    QFS.answers.consent_at || null,
     answers:       Object.assign({}, QFS.answers, qfAttribution())
   }
   try {
@@ -2885,6 +2891,14 @@ function qfSubmit() {
     qfShowErr('נא להזין מספר נייד ישראלי תקין — למשל 050-583-0969')
     return
   }
+  const cbx = document.getElementById('qf-consent')
+  if (!cbx || !cbx.checked) {
+    qfShowErr('כדי שנוכל לשלוח לך את התוצאות, יש לאשר את קבלת הדיוור')
+    return
+  }
+
+  QFS.answers.consent    = true
+  QFS.answers.consent_at = new Date().toISOString()
   QFS.answers[step.id]  = e164
   QFS.answers.phone_raw = raw
 
